@@ -1,0 +1,480 @@
+* {
+  margin: 0;
+  font-family: "shabnam";
+}
+@font-face {
+  font-family: "shabnam";
+  src: url("../style/Shabnam.woff2");
+}
+body {
+  background-color: rgb(255, 247, 237);
+  cursor: default;
+  position: relative;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.div {
+  background-color: rgb(255, 247, 237);
+  position: relative;
+}
+
+.header {
+  height: 5rem;
+  background-color: rgb(228, 242, 223);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 500ms;
+}
+.hed-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+}
+.hed-1-c {
+  position: relative;
+}
+.hed-1-c:hover .a-extra {
+  cursor: pointer;
+  width: 100%;
+  transition: all 300ms;
+}
+.hed-2 {
+  background-image: url("../pic/head.png");
+  background-size: contain;
+  height: 4rem;
+  width: 20.3rem;
+}
+.a-extra {
+  position: absolute;
+  height: 2.5px;
+  background-color: rgb(0, 111, 0);
+  width: 0;
+  transition: all 300ms;
+}
+.ss {
+  width: 100%;
+}
+.panel-btn {
+  position: fixed;
+  width: 1.5rem;
+  height: 1rem;
+  top: 1.5rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 600ms;
+  z-index: 100000000000000000000000000000000000000000000000000000000000000000000000000000000;
+  display: none;
+}
+.panel-btn-child {
+  width: 1.5rem;
+  height: 0.2rem;
+  background-color: orange;
+  position: relative;
+  z-index: 100000000000000000000000000000000000000000000000000000000000000000000000000000000;
+  transition: all 600ms;
+}
+.t {
+  top: calc(3.5rem / 2 - 0.5rem);
+  transition: all 600ms;
+}
+.hola {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100000000000000000000000000000000000000000000000000000000000000;
+  transition: all 600ms;
+}
+.panel {
+  position: fixed;
+  height: 100vh;
+  width: 15rem;
+  right: 0;
+  top: 0;
+  z-index: 100000000000000000000000000000000000000000000000000000000000000000;
+  background-color: rgb(255, 247, 237);
+  transition: all 600ms;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+.panel-titr {
+  margin: 1rem 1rem 0 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: orange;
+}
+.panel-body {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  min-width: 10rem;
+}
+.sd {
+  border-bottom: solid 1px rgb(169, 208, 127);
+  padding-bottom: 0.3rem;
+}
+.w0 {
+  width: 0%;
+  transition: all 600ms;
+}
+.hidt {
+  display: none;
+  transition: all 600ms;
+}
+.r12 {
+  right: 12.5rem;
+  transition: all 600ms;
+}
+.cat {
+  position: absolute;
+  top: 0.4rem;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: all 600ms;
+}
+.cct {
+  position: absolute;
+  top: 0.4rem;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  transition: all 600ms;
+}
+
+.space {
+  height: 16rem;
+  background: transparent;
+}
+/* footer */
+.footer {
+  position: fixed;
+  height: 16rem;
+  width: 100%;
+  bottom: 0;
+  z-index: -3;
+  background-color: rgb(228, 242, 223);
+  display: flex;
+  flex-direction: column;
+}
+.footer-hed-pic {
+  height: 3rem;
+  width: calc(3rem * 5.07);
+  background-image: url("../pic/head.png");
+  background-size: cover;
+  margin: 1rem 1rem 0 0;
+}
+.footer-dad {
+  display: flex;
+  padding: 1rem 1rem 0 0;
+  gap: 5rem;
+}
+.footer-1 {
+  display: flex;
+  flex-direction: column;
+}
+.footer-1-hed {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.footer-1-hed-cer {
+  width: 1.4rem;
+  height: 0.3rem;
+  background-color: orange;
+  border-radius: 99999px;
+}
+.footer-1-hed-name {
+  color: #1e641e;
+  font-size: 1.1rem;
+}
+.footer-1-body {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-1-body-ch {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.footer-1-body-ch-1 {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 99999px;
+}
+.footer-1-body-ch-2 {
+  color: #1e641e;
+}
+.footer-2 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.footer-2-1 {
+  color: #007400;
+}
+.footer-2-2 {
+  color: orange;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+.footer-picpng {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.footer-picpng-pic {
+  width: 14rem;
+  height: 14rem;
+  background-image: url("../poster/li.png");
+  background-size: cover;
+  margin-left: 1rem;
+}
+.h4 {
+  height: 4rem;
+  transition: all 500ms;
+}
+.t {
+  top: calc(3.5rem / 2 - 0.5rem);
+  transition: all 600ms;
+}
+.main {
+  margin: 2rem 3rem 0 3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 5rem;
+}
+.hidden {
+  display: none;
+}
+
+.one-1 {
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  position: relative;
+  transition: all 400ms;
+}
+.one-1:hover .one-1-pic {
+  transform: scale(1.2);
+  transition: all 300ms;
+}
+.one-1:hover .one-1-cer-c {
+  transform: scale(0.9);
+  transition: all 300ms;
+}
+.one-1:hover .one-1-hale {
+  opacity: 1;
+  transition: all 300ms;
+}
+.one-1:hover .waffen {
+  transform: translateY(0);
+  transition: all 400ms;
+}
+.one-1-pic {
+  width: 100%;
+  height: 100%;
+  background-image: url("../pic/waffen.jpg");
+  background-size: cover;
+  border-radius: 0.7rem;
+  transition: all 300ms;
+}
+.one-1-hale {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.7rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.2;
+  transition: all 300ms;
+}
+.ww {
+  position: absolute;
+  z-index: 100;
+  inset: 0;
+}
+.one-1-cer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.one-1-cer-c {
+  width: 5rem;
+  height: 5rem;
+  background: rgba(180, 180, 180, 0.5);
+  border-radius: 9999px;
+  border: 4px solid rgb(180, 180, 180);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  transition: all 300ms;
+}
+.waffen {
+  position: absolute;
+  color: azure;
+  font-weight: bold;
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+  z-index: 20;
+  top: 12.5rem;
+  left: calc(50% - 5rem);
+  transform: translateY(5rem);
+  transition: all 400ms;
+}
+
+.search {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 1rem; */
+}
+.input {
+  outline: none;
+  border: none;
+  padding: 0.4rem 0.8rem 0.4rem 0;
+  font-size: 1.2rem;
+}
+.search-icon {
+  height: 2rem;
+  width: 2rem;
+  background-image: url("../pngpic/download.png");
+  background-size: cover;
+  margin-right: -2rem;
+}
+.search-icon:hover {
+  cursor: pointer;
+}
+.none {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.o0 {
+  opacity: 0;
+  /* transition: all 400ms; */
+}
+.d {
+  transform: translateY(2rem);
+  /* transition: all 400ms; */
+}
+
+@media all and (max-width: 500px) {
+  .header {
+    justify-content: center;
+    height: 4rem;
+  }
+  .hed-1 {
+    display: none;
+  }
+  .hed-2 {
+    width: 15.2rem;
+    height: 3rem;
+  }
+  .h4 {
+    height: 3.5rem;
+  }
+  .panel-btn {
+    display: flex;
+  }
+
+  .space {
+    height: 30rem;
+  }
+  .footer {
+    position: fixed;
+    height: 30rem;
+    width: 100%;
+    bottom: 0;
+    z-index: -3;
+    background-color: rgb(228, 242, 223);
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-dad {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem 0 0;
+    gap: 2rem;
+  }
+  .footer-picpng-pic {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    left: 0;
+    top: 13rem;
+  }
+  .main {
+    margin: 2rem 1rem 5rem 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+  .one-1 {
+    width: 10rem;
+    height: 10rem;
+  }
+  .one-1-cer-c {
+    width: 3rem;
+    height: 3rem;
+    background: rgba(180, 180, 180, 0.5);
+    border-radius: 9999px;
+    border: 3px solid rgb(180, 180, 180);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: all 300ms;
+  }
+  .waffen {
+    position: absolute;
+    color: azure;
+    font-weight: bold;
+    width: 10rem;
+    height: 2rem;
+    text-align: center;
+    z-index: 20;
+    top: 8rem;
+    left: calc(50% - 5rem);
+    transform: translateY(0);
+    transition: all 400ms;
+  }
+}
