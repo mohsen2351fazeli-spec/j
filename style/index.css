@@ -1369,7 +1369,7 @@ body::-webkit-scrollbar {
     transition: all 800ms;
   }
   .hero-1-1-1 {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     width: 12rem;
     height: 12rem;
   }
@@ -1401,6 +1401,7 @@ body::-webkit-scrollbar {
   .hero-2-2-1 {
     width: 12rem;
     height: 12rem;
+    margin-left: 0.2rem;
   }
   .hero-2-1-1 {
     font-size: 1.4rem;
@@ -1438,9 +1439,11 @@ body::-webkit-scrollbar {
   }
   .time-left-1 {
     font-size: 1rem;
+    text-align: center;
   }
   .time-right-2 {
     font-size: 1rem;
+    text-align: center;
   }
   .time-left-cer {
     width: 0.8rem;
@@ -1455,20 +1458,20 @@ body::-webkit-scrollbar {
     right: -0.5rem;
   }
   .time-left-date {
-    left: -3.2rem;
+    left: -1.8rem;
     font-size: 0.6rem;
     width: 2.5rem;
     height: 0.9rem;
     font-weight: bold;
-    top: calc(50% - 0.45rem);
+    top: 0.2rem;
   }
   .time-right-date {
-    right: -3.2rem;
+    right: -1.8rem;
     font-size: 0.6rem;
     width: 2.5rem;
     height: 0.9rem;
     font-weight: bold;
-    top: calc(50% - 0.45rem);
+    top: 0.2rem;
   }
   /* thtext */
   .thtext {
@@ -1478,6 +1481,7 @@ body::-webkit-scrollbar {
   }
   .th-child {
     scroll-snap-align: center;
+    min-width: 22rem;
   }
   .thtext::-webkit-scrollbar {
     display: none;
@@ -1485,10 +1489,16 @@ body::-webkit-scrollbar {
   .thtext-extra {
     display: flex;
   }
+  .th-text {
+    font-size: 0.9rem;
+  }
+  .th-titr-2 {
+    font-size: 0.9rem;
+  }
   /* road to throne */
   .throne {
     margin: 2rem 1rem 0 1rem;
-    height: 25rem;
+    height: 22rem;
   }
   .throne-hale {
     position: absolute;
@@ -1528,6 +1538,9 @@ body::-webkit-scrollbar {
   .sasa {
     display: none;
   }
+  .one-2-1 {
+    text-align: center;
+  }
   /* music */
   .music {
     height: 50rem;
@@ -1536,53 +1549,55 @@ body::-webkit-scrollbar {
   }
   .music-1-2 {
     text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
   }
   .music-2 {
     width: 100%;
   }
   .j1 {
     top: 1rem;
-    right: 35%;
+    right: 33%;
   }
   .j2 {
     top: 3rem;
-    right: 30%;
+    right: 28%;
   }
   .j3 {
     top: 5rem;
-    right: 25%;
+    right: 23%;
   }
   .j4 {
     top: 7rem;
-    right: 20%;
+    right: 18%;
   }
   .j5 {
     top: 9rem;
-    right: 15%;
+    right: 13%;
   }
   .j6 {
     top: 11rem;
-    right: 13%;
+    right: 11%;
   }
   .j7 {
     top: 13rem;
-    right: 15%;
+    right: 13%;
   }
   .j8 {
     top: 15rem;
-    right: 20%;
+    right: 18%;
   }
   .j9 {
     top: 17rem;
-    right: 25%;
+    right: 22%;
   }
   .j10 {
     top: 19rem;
-    right: 30%;
+    right: 28%;
   }
   .j11 {
     top: 21rem;
-    right: 35%;
+    right: 33%;
   }
   /* pster */
   .poster-dad {
@@ -1620,6 +1635,11 @@ body::-webkit-scrollbar {
     padding: 1rem 0 1rem 0;
     margin-top: 2rem;
   }
+  .magale-1-pic {
+    width: 20rem;
+    height: 12rem;
+    position: relative;
+  }
   /* footer */
   .space {
     height: 30rem;
@@ -1651,6 +1671,7 @@ body::-webkit-scrollbar {
   .music-bar {
     height: 10rem;
     bottom: -5rem;
+    border-radius: 4rem;
   }
   .music-bar-main {
     gap: 1rem;
@@ -1672,15 +1693,15 @@ body::-webkit-scrollbar {
     height: 0.5rem;
     border-top: solid rgb(33, 103, 112) 2px;
     border-right: solid rgb(33, 103, 112) 2px;
-    top: calc(3rem - 0.45rem);
+    top: calc(4rem - 0.45rem);
     right: 1.5rem;
-  }
-  .music-bar {
-    border-radius: 5rem;
   }
 }
 
 .h0 {
   height: 0;
   transition: all 300ms;
+}
+.persons::-webkit-scrollbar {
+  display: none;
 }
