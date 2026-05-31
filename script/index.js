@@ -301,7 +301,7 @@ if (window.innerWidth > 500) {
     const cx = centerx;
     const cy = centery;
 
-    gtx.drawImage(thronepic, cx - 35, cy - 35, 70, 70);
+    gtx.drawImage(thronepic, cx - 25, cy - 30, 50, 50);
 
     const shakeX = Math.sin(t) * 2;
     const shakeY = Math.cos(t) * 2;
