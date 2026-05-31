@@ -413,4 +413,9 @@ body::-webkit-scrollbar {
     margin: 2rem 1rem 0 1rem;
     gap: 2rem;
   }
+  .magale-1-pic {
+    width: 20rem;
+    height: 12rem;
+    position: relative;
+  }
 }
