@@ -163,7 +163,10 @@ const chatWithGroq = async (prompt) => {
         },
         body: JSON.stringify({
           model: "llama-3.3-70b-versatile",
-          messages: [{ role: "user", content: prompt }],
+messages: [
+  { role: "system", content: "تو یک مورخ متخصص در دوره سه پادشاهی چین هستی. فقط به سوالات مرتبط با این دوره پاسخ بده و با لحن حماسی و محترمانه صحبت کن." },
+  { role: "user", content: prompt }
+],
         }),
       },
     );
@@ -216,7 +219,7 @@ btn.addEventListener("click", async () => {
       one.classList.remove("hidden");
       two.classList.remove("hidden");
       three.classList.add("hidden");
-      input.disabled = "false";
+      input.disabled = false;
     }
   }
 });
