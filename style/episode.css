@@ -393,6 +393,15 @@ a {
   transform: translateY(2rem);
   /* transition: all 400ms; */
 }
+.alarm {
+  margin: 0.5rem 0.7rem 0 0;
+  color: #1e641e;
+}
+.sh {
+  color: orange;
+  text-decoration: underline;
+  margin: 0 0.1rem 0 0.1rem;
+}
 
 @media all and (max-width: 500px) {
   .header {
@@ -476,5 +485,9 @@ a {
     left: calc(50% - 5rem);
     transform: translateY(0);
     transition: all 400ms;
+  }
+  .none {
+    font-size: 2rem;
+    padding-bottom: 4rem;
   }
 }
