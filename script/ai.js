@@ -70,82 +70,13 @@ const scrol = () => {
     .querySelector(".spy")
     .scrollIntoView({ behavior: "smooth", block: "end" });
 };
-//
-// {
-//   const API_KEY = "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";
 
-//   const chatWithGroq = async (prompt) => {
-//     one.classList.add("hidden");
-//     two.classList.add("hidden");
-//     three.classList.remove("hidden");
-//     const response = await fetch(
-//       "https://api.groq.com/openai/v1/chat/completions",
-//       {
-//         method: "POST",
-//         headers: {
-//           Authorization:
-//             "Bearer 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",
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//           model: "llama-3.3-70b-versatile",
-//           messages: [
-//             {
-//               role: "user",
-//               content: prompt,
-//             },
-//           ],
-//         }),
-//       },
-//     );
+const API_KEY =
+  "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";
 
-//     const data = await response.json();
-//     console.log(data);
+const conversation = [];
 
-//     return data.choices[0].message.content;
-//   };
-//   // /////////////////
-//   btn.addEventListener("click", () => {
-//     if (input.value) {
-//       go();
-//       bodi.insertAdjacentHTML(
-//         "beforeend",
-//         `<div class="right">${input.value}</div>`,
-//       );
-//       bodi.insertAdjacentHTML(
-//         "beforeend",
-//         `<div class="left">${chatWithGroq(input.value)}</div>`,
-//       );
-//       lefthandler();
-//       one.classList.remove("hidden");
-//       two.classList.remove("hidden");
-//       three.classList.add("hidden");
-//     }
-//     input.value = "";
-//     e();
-//   });
-//   const lefthandler = () => {
-//     const date = document.querySelectorAll(".left");
-//     const last = date[date.length - 1];
-//     let value = last.innerHTML;
-//     last.innerHTML = "";
-//     let inner = "";
-
-//     for (let i = 0; i < value.length; i++) {
-//       setTimeout(
-//         () => {
-//           inner += value[i];
-//           last.innerHTML = inner;
-//         },
-//         10 + i * 10,
-//       );
-//     }
-//   };
-// }
-
-const API_KEY = "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";
-
-const chatWithGroq = async (prompt) => {
+const chatWithGroq = async () => {
   one.classList.add("hidden");
   two.classList.add("hidden");
   three.classList.remove("hidden");
@@ -154,19 +85,38 @@ const chatWithGroq = async (prompt) => {
   e();
   try {
     const response = await fetch(
-      "https://api.groq.com/openai/v1/chat/completions",
+      "https://openrouter.ai/api/v1/chat/completions",
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${API_KEY}`,
+          Authorization: "Bearer " + API_KEY,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
-messages: [
-  { role: "system", content: "تو یک مورخ متخصص در دوره سه پادشاهی چین هستی. فقط به سوالات مرتبط با این دوره پاسخ بده و با لحن حماسی و محترمانه صحبت کن." },
-  { role: "user", content: prompt }
-],
+          model: "openrouter/free",
+          max_tokens: 2000,
+          messages: [
+            {
+              role: "system",
+              content: `
+                 نام این هوش مصنوعی zhugegbt است.
+
+                این سایت درباره دوران سه پادشاهی چین (Three Kingdoms) است.
+                موضوعات اصلی گفتگو شامل تاریخ، شخصیت‌ها، نبردها، سیاست‌ها، روابط و وقایع دوران سه پادشاهی است.
+
+                تو باید مانند ژوگه لیانگ (诸葛亮) صحبت کنی؛
+                یعنی پاسخ‌هایت خردمندانه، آرام، استراتژیک و متناسب با شخصیت ژوگه لیانگ باشد.
+
+                خودت را به عنوان یک هوش مصنوعی معرفی نکن، مگر اینکه کاربر مستقیماً درباره هویتت سؤال کند.
+                در پاسخ‌ها از لحن ژوگه لیانگ استفاده کن، اما اطلاعات تاریخی را تا حد ممکن دقیق و واقعی ارائه بده.
+
+                اگر کاربر درباره موضوعی خارج از دوران سه پادشاهی سؤال کرد، می‌توانی پاسخ بدهی، اما همچنان با لحن ژوگه لیانگ صحبت کن.
+
+                همیشه پاسخ را به زبان کاربر بده.`,
+            },
+
+            ...conversation,
+          ],
         }),
       },
     );
@@ -174,10 +124,8 @@ messages: [
       throw new Error("fetch error");
     }
     const data = await response.json();
-    return data.choices[0].message.content;
+    return data.choices?.[0]?.message?.content;
   } catch (error) {
-    //
-    console.error("error");
     one.classList.remove("hidden");
     two.classList.remove("hidden");
     three.classList.add("hidden");
@@ -189,6 +137,7 @@ messages: [
     scrol();
   }
 };
+
 btn.addEventListener("click", async () => {
   if (input.value) {
     go();
@@ -197,10 +146,24 @@ btn.addEventListener("click", async () => {
       "beforeend",
       `<div class="right">${userMessage}</div>`,
     );
+    bodi.insertAdjacentHTML("beforeend", `<div class="pending left"></div>`);
 
-    const botReply = await chatWithGroq(userMessage);
+    conversation.push({
+      role: "user",
+      content: userMessage,
+    });
+
+    const botReply = await chatWithGroq();
+
+    const pending = document.querySelector(".pending");
+    pending.remove();
 
     if (botReply) {
+      conversation.push({
+        role: "assistant",
+        content: botReply,
+      });
+
       bodi.insertAdjacentHTML("beforeend", `<div class="left"></div>`);
 
       const lastLeft = document.querySelectorAll(".left");
@@ -223,5 +186,4 @@ btn.addEventListener("click", async () => {
     }
   }
 });
-
 //
