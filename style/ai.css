@@ -419,6 +419,14 @@ a {
   margin-top: 2rem;
   align-self: flex-end;
 }
+.pending {
+  padding: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #7dc27d;
+  animation: pend 1500ms infinite linear;
+}
 .spy {
   width: 100%;
   min-height: 10rem;
@@ -429,6 +437,20 @@ a {
   }
   100% {
     rotate: 360deg;
+  }
+}
+@keyframes pend {
+  0% {
+    background-color: #7dc27d;
+    scale: 1;
+  }
+  50% {
+    background-color: #007400;
+    scale: 2;
+  }
+  100% {
+    background-color: #7dc27d;
+    scale: 1;
   }
 }
 
