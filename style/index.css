@@ -29,7 +29,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 501ms;
+  transition: all 500ms;
 }
 .hed-1 {
   display: flex;
@@ -1064,12 +1064,14 @@ a {
   text-align: center;
   margin-top: 1.5rem;
   font-size: 0.9rem;
+  font-weight: bolder;
 }
 .person-to {
   color: azure;
   width: 90%;
   text-align: justify;
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .rt {
